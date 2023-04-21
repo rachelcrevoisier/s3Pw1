@@ -1,0 +1,39 @@
+.grilleIcone {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    flex-grow: 1;
+    padding-right:20px;
+    padding-left: 20px;
+}
+/* 
+
+.grilleListe {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+   width:100%;
+   
+    padding-right: 20px;
+}
+.grilleListe article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    border: 1px solid var(--colorBleu);
+    padding: 20px;
+}
+.grilleListe article h4 {
+    font-size: var(--tall);
+    
+}
+
+.grilleListe article p {
+    font-size: var(--short);
+}
+.grilleListe img {
+    min-height: 100%;
+    width: 200px;
+} */

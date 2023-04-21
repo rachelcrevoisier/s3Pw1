@@ -1,0 +1,129 @@
+/* styles de base */
+
+.nav-premier ul,
+.nav-second ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    font-family: var(--font-titre);
+    align-items: center;
+    justify-content: center;
+}
+.nav-premier a:hover {
+    color: var(--colorRouge);
+}
+.nav-second a:hover {
+    color: var(--colorRosee);
+}
+
+/* styles d'interaction */
+@media (max-width: 850px) {
+    header {
+        position: fixed;
+        inset: 0;
+        overflow: auto;
+        background-color: var(--colorClair);
+        z-index: 1;
+    }
+
+    .nav-trigger {
+        appearance: none;
+        position: sticky;
+        top: 10px;
+        right: 10px;
+        background-color: var(--colorBleu);
+        color: white;
+        padding: 5px;
+        border-radius: 2px;
+        margin-bottom: 20px;
+        z-index: 2;
+    }
+
+    .nav-trigger:not(:checked)~header {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-trigger::after {
+        content: "Menu";
+    }
+
+    .nav-trigger:checked::after {
+        content: "Fermer";
+    }
+
+    .nav-second,
+    .nav-premier {
+        display: flex;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .nav-premier ul,
+    .nav-second ul {
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top:30px;
+    }
+
+    .pasMobile {
+        display: none;
+    }
+
+    .nav-premier {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .nav-second,
+    .nav-premier {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 850px) {
+    .nav-trigger {
+        display: none;
+    }
+
+    .nav-premier,
+    .nav-second {
+        font-size: 20px;
+    }
+
+    .nav-premier {
+        display: flex;
+        padding: 20px;
+        background-color: var(--colorClair);
+        align-items: center;
+    }
+
+    .nav-premier ul {
+        justify-content: flex-start;
+    }
+
+    .nav-premier ul,
+    .nav-second ul {
+        padding: 5px 10px 5px 10px;
+        gap: 30px;
+    }
+
+    .nav-second ul {
+        justify-content: right;
+        background-color: var(--colorBleu);
+        color: white;
+    }
+
+    .header {
+        padding: 0px 0 0px 0px;
+        margin-bottom: 0px;
+    }
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{ titre }}</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/admin.css?v=1.1">
+<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+<script type="module" src="js/connexionDeconnexion.js"></script>
+
+
+  <script type="module" src="js/connexionDeconnexion.js"></script>
+</head>
+
+<body>
+  <div id="page">
+    <header>
+      <p>
+        {{ oUtilConn.prenom }} {{ oUtilConn.nom }}
+        <a href="admin?entite=usager&action=d">Déconnecter</a>
+      </p>
+      <nav>
+        <ul>
+          
+          
+
+          {% if oUtilConn.idprofil == constant('Usagers::PROFIL_ADMINISTRATEUR') %}
+          <li><a href="admin?entite=Encheres">Encheres</a></li>
+          <li><hr><a href="admin?entite=usager">Usagers</a></li>
+          {% endif %} 
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+    {{ include(templateMain) }}
+
+    </main>
+  </div>
+</body>
+</html>

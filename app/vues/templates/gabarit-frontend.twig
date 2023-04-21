@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Projet Web 1 Session 3">
+		<meta name="keywords" content="philateliste, Stampee, enchères, timbres">
+		<meta name="author" content="Rachel Crevoisier">
+		<link rel="stylesheet" href="assets/css/main.css">
+		
+		<script type="module" src="js/connexionDeconnexion.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Merriweather:ital,wght@0,300;0,400;1,300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+		<title>Accueil</title>
+	</head>
+	<body>
+		<link rel="stylesheet" href="assets/css/logo.css">
+		<link rel="stylesheet" href="assets/css/nav.css">
+		<link rel="stylesheet" href="assets/css/iconeAffichage.css">
+		
+		<input aria-label="menuitem" class="nav-trigger" type="checkbox">
+		<header>
+			<nav class="nav-second">
+				<ul role="menu">
+					<li role="menuitem" aria-haspopup="true" class="pasMobile">
+						<a href="actualite">Actualité</a>
+					</li>
+					<li role="menuitem" aria-haspopup="true">
+						<a href="aide">Aide</a>
+					</li>
+					<li role="menuitem" aria-haspopup="true">
+						<a href="english">English</a>
+					</li>
+					<li role="menuitem" aria-haspopup="true" class="pasMobile">
+						<a href="contact">Contact</a>
+					</li>
+					<li role="menuitem" aria-haspopup="true">
+						<span id="usager">{{ oUtilConn.prenom }}
+							{{ oUtilConn.nom }}</span>
+						<span id="connecter" class="{{ oUtilConn ? 'invisible' : '' }}">Connexion</span>
+						<span id="deconnecter" class="{{ not oUtilConn ? 'invisible' : '' }}">Déconnecter</span>
+						<span id="inscription" class="{{ oUtilConn ? 'invisible' : '' }}">
+							<a href="inscription">Inscription</a>
+						</span>
+					</li>
+				</ul>
+			</nav>
+
+			<nav class="nav-premier">
+				<a href="./">
+					<span class="logo">STAMPEE</span>
+				</a>
+				<ul role="menu">
+					<li role="menuitem" aria-haspopup="true">
+						<a href="#">Enchères en cours</a>
+					</li>
+					<li role="menuitem" aria-haspopup="true">
+						<a href="#">Enchères terminées</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+
+			{{ include(templateMain) }}
+		</main>
+
+		{{ include("modaleConnexion.twig") }}
+
+
+		<link rel="stylesheet" href="assets/css/iconeAffichage.css">
+		<link rel="stylesheet" href="assets/css/footer.css">
+		<footer>
+			<section class="iconesAffichage flecheHaut">
+				<a href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" aria-label="Icone de la fleche Haut">
+						<path d="M22.5 31.4h3v-9.1l3.7 3.7 2.1-2.1-7.3-7.3-7.3 7.3 2.1 2.1 3.7-3.7ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 24q0-4.15 1.575-7.8 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24 4q4.15 0 7.8 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm0-3q7.1 0 12.05-4.975Q41 31.05 41 24q0-7.1-4.95-12.05Q31.1 7 24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24 41Zm0-17Z"/>
+					</svg>
+				</a>
+			</section>
+			<section class="footerGeneral">
+				<div class="footerLogo">
+					<a href="index.html">
+						<span class="logo">STAMPEE</span>
+					</a><br>
+					Lordship Ln<br>
+					London N17 8NU<br>
+					Royaume-Uni<br>
+					+44 20 8489 4250<br>
+					lord.regina@stampee.com
+				</div>
+
+				<div class="footerNews">
+					Abonnez-vous pour rester informé des nouvelles mises en ligne<br>
+					<input type="email" id="courriel" name="courriel" aria-labelledby="courriel" placeholder="exemple@entreprise.com">
+					<button class="bouton petit clair" type="submit">S'abonner</button>
+				</div>
+				<div class="footerInfos">
+					<ul>
+						<li>Actualités</li>
+						<li>À propos</li>
+						<li>Contact</li>
+						<li>FAQ</li>
+					</ul>
+				</div>
+				<div class="footerConnexion">
+
+					<button id="connecter" class="{{ oUtilConn ? 'invisible' : '' }} bouton grand clair">Connexion</button>
+
+
+				</div>
+			</section>
+			<section class="footerSupplementaires">
+				<div class="pasMobile">@Stampee 2023</div>
+				<div>Mentions légales - Charte de Stampee - Politique de confidentialité - Gestion des cookies - Conditions générales - Aide (FAQ)</div>
+				<div class="reseaux">
+					<a href="https://www.facebook.com" target="_blank" title="Lien vers Facebook"><img src="assets/img/visuel/logo_facebook.webp" alt="Logo Facebook" width="20"></a>
+					<a href="https://www.twitter.com" target="_blank" title="Lien vers twitter"><img src="assets/img/visuel/logo_twitter.webp" alt="Logo twitter" width="20"></a>
+					<a href="https://www.linkedin.com" target="_blank" title="Lien vers linkedin"><img src="assets/img/visuel/logo_linkedin.webp" alt="Logo Linkedin" width="20"></a>
+					<a href="https://www.pinterest.com" target="_blank" title="Lien vers Pinterest"><img src="assets/img/visuel/logo_pinterest.webp" alt="Logo Pinterest" width="20"></a>
+				</div>
+			</section>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+html, body, h1, h2, p, ul, li {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+body {
+  width: 90%;
+  min-width: 960px;
+  margin: 0 auto;
+  font-family: 'roboto';
+  background-color:var(--colorBleu);
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #98cece;
+}
+main > section > h1 {
+  margin: 40px 0;
+  text-align: center;
+  font-size: 48px;
+  color: white;
+}
+#erreur a {
+  display: block;
+  text-align: center;
+}
+#erreur p {
+  margin: 20px;
+}

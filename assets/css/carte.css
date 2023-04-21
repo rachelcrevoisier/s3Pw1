@@ -1,0 +1,45 @@
+.carte-texte-image{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    border:1px solid var(--colorRouge);
+    padding:20px;
+    position: relative;
+}
+.carte-texte-image + img {
+    min-height: auto;
+    width: 100%;
+}
+.carte-texte{
+    margin-top: auto;
+}
+
+.carte-texte-image h4 {
+    font-size: var(--normal);
+}
+
+.carte-texte-image p {
+    font-size: var(--petit);
+}
+
+.carte-texte-image__etiquette {
+    position: absolute;
+    right: -6%;
+    top: 0;
+}
+
+.carte-texte-image .certifie {
+    width: 80px;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.carte-texte-image__certifie {
+    position: absolute;
+    right: 67%;
+    top: 0;
+
+}

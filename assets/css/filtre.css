@@ -1,0 +1,30 @@
+.filtre {
+    display:flex;
+    flex-direction: column;
+    width: 17%;
+    padding: 0px 0px 30px 20px;
+    border-right:1px solid var(--colorBleu)
+}
+.filtre> details{
+    position: sticky;
+    top: 5px;
+}
+.filtre summary{
+    margin-top: var(--interligneSerre);
+    margin-bottom: var(--interligneTresSerre);
+    font-weight:900;
+    font-size: 20px;
+}
+.filtre .voirPlus {
+    text-align: center;
+    font-weight: 900;
+    
+}
+@media (max-width: 900px) {
+
+   .filtre {
+        width: 100%;
+        border:none;
+        padding: 0px 0px 0px 20px;
+    }
+}

@@ -1,0 +1,35 @@
+.bouton {
+    border: none;
+    font-family: var(--font-titre);
+    font-size: var(--current);
+    font-weight: bold;
+    
+}
+
+
+.grand{
+    padding: 10px 20px 10px 20px;
+    font-size: var(--current);
+    margin-top: 20px;
+}
+
+.petit {
+    padding: 5px 10px 5px 10px;
+    font-size: var(--short);
+}
+
+.clair {
+    background-color: var(--colorClair);
+    color: var(--colorBleu);
+}
+
+.bleu {
+    background-color: var(--colorBleu);
+    color: var(--colorClair);
+}
+
+
+.clair:hover {
+    background-color: var(--colorBleu);
+    color: var(--colorClair);
+}

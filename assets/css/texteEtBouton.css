@@ -1,0 +1,14 @@
+.texteEtBouton {
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: var(--colorClair);
+    min-height: 25vh;
+    width: 100%;
+}
+
+.texteEtBouton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,21 @@
+.etiquette {
+
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-family: var(--font-titre);
+    padding:0px 10px 0px 10px;
+}
+
+.etiquette_jaune {
+    background-color: var(--colorJaune);
+    color:var(--colorBleu);
+}
+
+
+.etiquette_rouge {
+    background-color: var(--colorRouge); 
+}

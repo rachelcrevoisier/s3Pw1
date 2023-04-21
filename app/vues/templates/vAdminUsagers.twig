@@ -1,0 +1,39 @@
+<script>
+	history.pushState({}, '', 'admin?entite=usager')
+</script>
+<section>
+	<h1>{{ titre|upper }}</h1>
+	{% if oUtilConn.idprofil == constant('Usagers::PROFIL_ADMINISTRATEUR')%}
+		<a href="admin?entite=usager&action=a">Ajouter un usager</a>
+	{% endif %}
+
+
+
+	<p class="messageRetourAction {{ classRetour }}">{{ messageRetourAction }}&nbsp;</p>
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Prénom, Nom</th>
+		<th>Courriel</th>
+		<th>Profil</th>
+		<th>Actions</th>
+	</tr>
+	{% for usager in Usagers %}
+	<tr>
+		<td>{{ usager.id_usager }}</td>
+		<td>{{ usager.prenom }} {{ usager.nom }}</td>
+		<td>{{ usager.courriel }}</td>
+		<td>{{ usager.idprofil }}</td>
+		<td>
+		{% if 
+             (oUtilConn.idprofil == constant('usagers::PROFIL_ADMINISTRATEUR')) %}
+			 <a href="admin?entite=usager&action=m&id_usager={{ usager.id_usager }}">modifier</a>
+			<span class="confirmer" data-href="admin?entite=usager&action=s&id_usager={{usager.id_usager}}">Supprimer</a></span>
+		{% endif %}
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+
+</section>
+{{ include("modaleSuppression.twig") }}

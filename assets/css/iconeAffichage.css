@@ -1,0 +1,28 @@
+.iconesAffichage {
+    display: flex;
+    justify-content: flex-end;
+   
+}
+.iconesAffichage.haut{
+    padding-top:20px;
+    padding-right: 20px;
+}
+
+.flecheHaut {
+    scroll-behavior: smooth;
+    background-color: var(--colorBleu);
+}
+
+.flecheHaut svg, .connexion svg {
+    fill: white;
+    padding-top: 10px;
+}
+.connexion svg {
+    padding : 0 10px 0 0;
+}
+/* styles d'interaction */
+@media (max-width: 900px) {
+    .iconesAffichage {
+        display: none;
+    }
+}

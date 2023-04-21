@@ -1,0 +1,74 @@
+:root {
+    /* Couleurs */
+    --colorJaune: #F5C76B;
+    --colorRosee: #D8BDB2;
+    --colorBleu: #3d5061;
+    --colorRouge: #8A2F34;
+    --colorClair: #ECEFE7;
+    
+    /* Polices */
+    --font-ecriture: 'Merriweather',serif;
+    --font-titre:'Roboto',verdana,sans-serif;
+    
+    /* Tailles */
+    --miniature: 9px;
+    --tresPetit: 12px;
+    --petit: 14px;
+    --normal: 16px;
+    --grand: 18px;
+    --tresGrand :25px;
+    --tresTresGrand: 32px;
+
+    /* Interligne */ /* Note : em : relatif à la taille de la police*/
+    --interlignePetit: 1em;
+    --interligneTresSerre: 1.26875em;
+    --interligneSerre: 1.54285em;
+    --interligneNormal: 2em;
+    --interligneGrand: 3.3125em;
+    --interligneTresGrand: 4.2em;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    max-width: 75ch;
+}
+
+html {
+    line-height: var(--interligneSerre);
+    font-family: var(--font-ecriture);
+}
+/* Je sélectionne tous les eléments de mon body mais pas .nav-trigger. ça me permet de sup la marge top de mon menu */
+/* body> *:not(.nav-trigger)+*
+{ 
+    margin-top:45px;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: var(--interlignePetit);
+    font-family: var(--font-titre);
+}
+h2{
+    font-size: var(--tresGrand);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+
+

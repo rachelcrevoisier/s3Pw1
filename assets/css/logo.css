@@ -1,0 +1,14 @@
+.logo {
+    font-family: var(--font-titre);
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--colorBleu);
+    padding-right: 30px;
+}
+
+@media (max-width: 850px) {
+    .logo {
+        padding : 20px 0 20px 0;
+    }
+
+}
