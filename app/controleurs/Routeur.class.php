@@ -17,7 +17,9 @@ class Routeur
     ['connecter',             'Frontend', 'connecter'],
     ['deconnecter',           'Frontend', 'deconnecter'],
     ['inscription',           'Frontend', 'inscription'],
-    ['validationInscription', 'Frontend', 'validationInscription']
+    ['validationInscription', 'Frontend', 'validationInscription'],
+    ['voirUsager',            'Frontend', 'voirUsager'],
+    ['ajoutEnchere',          'Frontend', 'ajouterEnchere']
   ];
 
   protected $oRequetesSQL; // objet RequetesSQL utilisé par tous les contrôleurs
@@ -25,7 +27,7 @@ class Routeur
   // const BASE_URI = '/31B/'; // dossier racine du site par rapport au dossier racine d'Apache 
   //const BASE_URI = '/Users/14384/Dropbox/Mes%20documents/Perso%20-%202018-07-26/College/session%203/ProjetWebUn/site/'; // pour le PHP Server de Visual Studio Code
   const BASE_URI = '/ProjetWebUn/site/'; // pour le PHP Server de Visual Studio Code
-//const BASE_URI = '/projetWeb1/' Pour webdev
+  //const BASE_URI = '/projetWeb1/'; //Pour webdev
   const ERROR_FORBIDDEN = "HTTP 403";
   const ERROR_NOT_FOUND = 'HTTP 404';
 

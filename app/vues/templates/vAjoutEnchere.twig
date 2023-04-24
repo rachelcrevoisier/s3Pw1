@@ -1,0 +1,52 @@
+<!-- Template Inscription -->
+{% if oUtilConn %}
+
+<link rel="stylesheet" href="assets/css/connexion.css">
+<section class="inscription">
+	<form enctype="multipart/form-data" name="frmEnchere" method="POST" action="">
+		<input type="date" name="dateDebut" value="{{ enchere.dateDebut }}" placeholder="Date de début">
+		<span>&nbsp;{{ erreursEnchere.dateDebut }}</span>
+		<input type="date" name="dateFin" value="{{ enchere.dateFin }}" placeholder="Date de fin">
+		<span>&nbsp;{{ erreursEnchere.dateFin }}</span>
+		<input name="tarifBase" value="{{ enchere.tarifBase }}" placeholder="Montant de base">
+		<span>&nbsp;{{ erreursEnchere.tarifBase }}</span>
+		<input type="hidden" name="choixLord" value="Non">
+        <input name="pays" value="{{ timbre.pays }}" placeholder="pays du timbre">
+		<span>&nbsp;{{ erreursTimbre.pays }}</span>
+        <input name="certifie" value="{{ timbre.certifie }}" placeholder="Certification du timbre">
+		<span>&nbsp;{{ erreursTimbre.certifie }}</span>
+        <input name="annee" value="{{ timbre.annee }}" placeholder="Année">
+		<span>&nbsp;{{ erreursTimbre.annee }}</span>
+        <input name="couleur" value="{{ timbre.couleur }}" placeholder="Couleur">
+		<span>&nbsp;{{ erreursTimbre.couleur }}</span>
+        <input name="tirage" value="{{ timbre.tirage }}" placeholder="Nombre de tirage">
+		<span>&nbsp;{{ erreursTimbre.tirage }}</span>
+        <input name="dimensions" value="{{ timbre.dimensions }}" placeholder="Dimensions en cm">
+		<span>&nbsp;{{ erreursTimbre.dimensions }}</span>
+        <input name="histoire" value="{{ timbre.histoire }}" placeholder="Histoire du timbre">
+		<span>&nbsp;{{ erreursTimbre.histoire }}</span>
+        <input name="idcondition" value="{{ timbre.idcondition }}" placeholder="Etat du timbre">
+		<span>&nbsp;{{ erreursTimbre.idcondition }}</span>
+        <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
+       <laber> Ajouter une image : </label><input name="fichierVisuel" type="file" />
+       <span>&nbsp;{{ erreursTimbre.fichierVisuel }}</span>
+       <input type="hidden" name="typeVisuel" value="Premier">
+        <input type="hidden" name="idusager" value="{{ oUtilConn.id_usager }}">
+		<input type="submit" value="S'inscrire">
+
+	</form>
+{% else %}
+<br><br>
+<br>
+<br>
+
+<p>Connectez-vous pour faire une enchere</p>
+<br>
+<br>
+<br>
+<br>{% endif %}
+
+</section>
+
+
+<!-- fin template Accueil -->

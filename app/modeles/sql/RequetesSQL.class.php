@@ -34,6 +34,7 @@ class RequetesSQL extends RequetesPDO
    */
   public function getEncheres($critere = 'encours')
   {
+    
     $oAujourdhui = ENV === "DEV" ? new DateTime(MOCK_NOW) : new DateTime();
     $aujourdhui  = $oAujourdhui->format('Y-m-d');
     $nouvelle = $oAujourdhui->modify('+2 day')->format('Y-m-d');
@@ -42,7 +43,6 @@ class RequetesSQL extends RequetesPDO
       SELECT *
       FROM timbres
       INNER JOIN encheres ON timbres.idenchere = encheres.id_enchere
-      INNER JOIN mises ON timbres.idenchere = mises.idenchere
       INNER JOIN images ON timbres.id_timbre = images.idtimbre";
 
     switch ($critere) {
@@ -64,6 +64,7 @@ class RequetesSQL extends RequetesPDO
       case 'choixlord':
         $this->sql .= " WHERE encheres.choixLord = 'Oui' ";
         break;
+      
     }
     return $this->getLignes();
   }
@@ -87,14 +88,14 @@ class RequetesSQL extends RequetesPDO
    * @param int $id_usager 
    * @return array|false tableau associatif de la ligne produite par la select, false si aucune ligne
    */
-  /*   public function getUsager($id_usager)
+   public function getUsager($id_usager)
   {
     $this->sql = '
       SELECT *
       FROM usagers
       WHERE id_usager = :id_usager';
     return $this->getLignes(['id_usager' => $id_usager], RequetesPDO::UNE_SEULE_LIGNE);
-  } */
+  }
 
 
 
@@ -133,6 +134,40 @@ class RequetesSQL extends RequetesPDO
   {
     $this->sql = '
       INSERT INTO usagers SET nom = :nom, prenom = :prenom, adresse = :adresse, codePostal = :codePostal, ville = :ville, pays = :pays, courriel = :courriel, telephone = :telephone, mdp = SHA2(:mdp, 512), idprofil = :idprofil';
+    return $this->CUDLigne($champs);
+  }
+
+   public function getEncheresUsager($id_usager)
+  {
+    $this->sql = '
+      SELECT *
+      FROM timbres
+      INNER JOIN encheres ON timbres.idenchere = encheres.id_enchere
+      INNER JOIN images ON timbres.id_timbre = images.idtimbre
+      WHERE encheres.idusager = :id_usager';
+    return $this->getLignes(['id_usager' => $id_usager]);
+  }
+
+  public function getAjouterEnchere($champs)
+  {
+    $this->sql = '
+      INSERT INTO encheres SET dateDebut = :dateDebut, dateFin = :dateFin, tarifBase = :tarifBase, choixLord = :choixLord, idusager = :idusager';
+
+    return $this->CUDLigne($champs);
+  }
+
+  public function getAjouterTimbre($champs)
+  {
+    $this->sql = '
+      INSERT INTO timbres SET nom = :nom, pays = :pays, certifie = :certifie, annee = :annee, couleur = :couleur, tirage = :tirage, dimensions = :dimensions, histoire = :histoire, idcondition = :idcondition, idenchere = :idenchere';
+
+    return $this->CUDLigne($champs);
+  }
+  public function getAjouterVisuel($champs)
+  {
+    $this->sql = '
+      INSERT INTO images SET lien = :lien, typeVisuel = :typeVisuel, idtimbre = :idtimbre';
+
     return $this->CUDLigne($champs);
   }
 }

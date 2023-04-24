@@ -1,0 +1,76 @@
+
+{% if oUtilConn %}
+
+
+<div class="titre">
+	<h2>Informations de {{ oUtilConn.prenom }} {{ oUtilConn.nom }}</h2>
+</div>
+<section class="membre">
+
+{{ usager.adresse }} {{ usager.codePostal }} {{ usager.ville }} {{ usager.pays }}<br>
+{{ usager.telephone }} - {{ usager.courriel }}<br>
+
+</section>
+<div class="titre">
+	<h2>Mes enchères</h2>
+    <a href="ajoutEnchere">Ajouter une enchère</a>
+</div>
+
+<link rel="stylesheet" href="assets/css/bouton.css">
+
+<link rel="stylesheet" href="assets/css/etiquettes.css">
+<link rel="stylesheet" href="assets/css/grille.css">
+<link rel="stylesheet" href="assets/css/carte.css">
+
+<section class="grilleAccueil">
+	<div class="grilleIcone">
+
+		{% for enchere in encheresUsager %}
+			<article class="carte-texte-image">
+				<img src="assets/img/timbres/{{ enchere.lien }}" alt="{{ enchere.nom }}">
+				{% if enchere.certifie == "Oui" %}
+					<aside class="certifie carte-texte-image__certifie"><img src="assets/img/visuel/certifie.webp" alt="Timbre certifié"></aside>
+				{% endif %}
+				{% if enchere.certifie == "Oui" %}
+					<aside class="certifie carte-texte-image__certifie"><img src="assets/img/visuel/certifie.webp" alt="Timbre certifié"></aside>
+				{% endif %}
+				<div class="carte-texte">
+					<h4>{{ enchere.nom }}
+						{{ Aujourdhui }}
+					</h4>
+					<p>{{ enchere.annee }}
+						-
+						{{ enchere.pays }}</p>
+					<p>Temps restant : 9j 4h 36</p>
+				</div>
+				<a href="enchere?enchere_id={{ enchere.id_enchere }}">
+					<button class="bouton petit clair">Voir</button>
+				</a>
+			</article>
+		{% endfor %}
+	</div>
+</section>
+<div class="titre">
+	<h2>Mes mises</h2>
+</div>
+<div class="titre">
+	<h2>Mes coups de coeur</h2>
+</div>
+
+{% else %}
+<br><br>
+<br>
+<br>
+
+<p>Connectez-vous pour voir votre profil</p>
+<br>
+<br>
+<br>
+<br>
+
+{% endif %}
+
+
+
+
+</section>

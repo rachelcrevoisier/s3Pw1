@@ -9,7 +9,9 @@ class Encheres
     private $id_enchere;
     private $dateDebut;
     private $dateFin;
-    private $idtimbre;
+    private $choixLord;
+    private $idusager;
+    private $tarifBase;
 
 
     private $erreurs = array();
@@ -50,9 +52,17 @@ class Encheres
     {
         return $this->dateFin;
     }
-    public function getidtimbre()
+    public function getchoixLord()
     {
-        return $this->idtimbre;
+        return $this->choixLord;
+    }
+    public function getidusager()
+    {
+        return $this->idusager;
+    }
+    public function gettarifBase()
+    {
+        return $this->tarifBase;
     }
 
     public function getErreurs()
@@ -109,17 +119,47 @@ class Encheres
         return $this;
     }
 
+    
     /**
-     * Mutateur de la propriété idtimbre 
-     * @param string $idtimbre
+     * Mutateur de la propriété idusager 
+     * @param string $idusager
      * @return $this
      */
-    public function setidtimbre($idtimbre)
+    public function setidusager($idusager)
     {
-        $this->idtimbre = $idtimbre;
-        unset($this->erreurs['idtimbre']);
-        $idtimbre = trim($idtimbre);
-        $this->idtimbre = $idtimbre;
+        $this->idusager = $idusager;
+        unset($this->erreurs['idusager']);
+        $idusager = trim($idusager);
+        $this->idusager = $idusager;
         return $this;
     }
+    /**
+     * Mutateur de la propriété choixLord 
+     * @param string $choixLord
+     * @return $this
+     */
+    public function setchoixLord($choixLord)
+    {
+        $this->choixLord = $choixLord;
+        unset($this->erreurs['choixLord']);
+        $choixLord = trim($choixLord);
+        $this->choixLord = $choixLord;
+        return $this;
+    }
+    /**
+     * Mutateur de la propriété tarifbase 
+     * @param string $tarifBase
+     * @return $this
+     */
+    public function settarifBase($tarifBase)
+    {
+        $this->tarifBase = $tarifBase;
+        unset($this->erreurs['tarifBase']);
+        $tarifBase = trim($tarifBase);
+        $this->tarifBase = $tarifBase;
+        return $this;
+    }
+
+
+
 }

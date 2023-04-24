@@ -12,7 +12,7 @@
 		<script type="module" src="js/connexionDeconnexion.js"></script>
 		<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Merriweather:ital,wght@0,300;0,400;1,300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-		<title>Accueil</title>
+		<title>{{ titre }}</title>
 	</head>
 	<body>
 		<link rel="stylesheet" href="assets/css/logo.css">
@@ -36,12 +36,11 @@
 						<a href="contact">Contact</a>
 					</li>
 					<li role="menuitem" aria-haspopup="true">
-						<span id="usager">{{ oUtilConn.prenom }}
-							{{ oUtilConn.nom }}</span>
+						<a href="voirUsager?id_usager={{ oUtilConn.id_usager }}"><span id="usager">{{ oUtilConn.prenom }}
+							{{ oUtilConn.nom }}</span></a>
 						<span id="connecter" class="{{ oUtilConn ? 'invisible' : '' }}">Connexion</span>
 						<span id="deconnecter" class="{{ not oUtilConn ? 'invisible' : '' }}">Déconnecter</span>
-						<span id="inscription" class="{{ oUtilConn ? 'invisible' : '' }}">
-							<a href="inscription">Inscription</a>
+						<span id="inscription" class="{{ oUtilConn ? 'invisible' : '' }}"><a href="inscription">Inscription</a>
 						</span>
 					</li>
 				</ul>
