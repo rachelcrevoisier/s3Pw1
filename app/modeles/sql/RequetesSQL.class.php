@@ -170,4 +170,20 @@ class RequetesSQL extends RequetesPDO
 
     return $this->CUDLigne($champs);
   }
+
+
+  /**
+   * Récupération d'une enchère
+   * @param int $id_enchere
+   * @return array|false tableau associatif de la ligne produite par la select, false si aucune ligne
+   */
+  public function getEnchere($id_enchere)
+  {
+    $this->sql = '
+      SELECT *
+      FROM encheres
+      WHERE id_enchere = :id_enchere';
+    return $this->getLignes(['id_enchere' => $id_enchere], RequetesPDO::UNE_SEULE_LIGNE);
+  }
+
 }

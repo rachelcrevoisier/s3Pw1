@@ -14,12 +14,13 @@ class Routeur
     ['admin',                 'Admin',    'gererAdmin'],
     ['',                      'Frontend', 'accueil'],
     ['accueil',               'Frontend', 'accueil'],
-    ['connecter',             'Frontend', 'connecter'],
-    ['deconnecter',           'Frontend', 'deconnecter'],
-    ['inscription',           'Frontend', 'inscription'],
-    ['validationInscription', 'Frontend', 'validationInscription'],
-    ['voirUsager',            'Frontend', 'voirUsager'],
-    ['ajoutEnchere',          'Frontend', 'ajouterEnchere']
+    ['connecter',             'cUsager', 'connecter'],
+    ['deconnecter',           'cUsager', 'deconnecter'],
+    ['inscription',           'cUsager', 'inscription'],
+    ['validationInscription', 'cUsager', 'validationInscription'],
+    ['voirUsager',            'cUsager', 'voirUsager'],
+    ['ajoutEnchere',          'cEnchere', 'ajouterEnchere'],
+    ['enchere     ',          'cEnchere', 'voirEnchere']
   ];
 
   protected $oRequetesSQL; // objet RequetesSQL utilisé par tous les contrôleurs

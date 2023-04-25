@@ -22,6 +22,7 @@ CREATE TABLE profils(
     profils VARCHAR(30),
     PRIMARY KEY(profils)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE conditions(
     conditions VARCHAR(30),
     PRIMARY KEY(conditions)
